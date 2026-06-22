@@ -108,27 +108,3 @@ python code/main.py
 
 
 
-\## 📜 Citation
-
-
-
-```bibtex
-
-@article{jarvis2026cosmoentanglement,
-
-&#x20; title={Entanglement-Geometric Signatures of Hyper-Stiff Cosmological Phases: A Unified Framework Linking Brane Rupture, Confinement Energy, and Mutual-Information Geometry},
-
-&#x20; author={Jarvis, Paul},
-
-&#x20; journal={arXiv preprint arXiv:2606.XXXXX},
-
-&#x20; year={2026},
-
-&#x20; month={June}
-
-}
-
-```
-
-
-
