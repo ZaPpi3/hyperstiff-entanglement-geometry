@@ -272,15 +272,16 @@ if __name__ == "__main__":
     plt.savefig("FIG9_IPR_vs_lam1.png", dpi=300)
     plt.close()
 
-  # 10. IPR vs alpha (corrected diagnostic)
-plt.figure()
-for phase in PHASES:
-    xs = [r["alpha"] for r in results if r["phase"] == phase]
-    ys = [r["ipr"] for r in results if r["phase"] == phase]
-    plt.scatter(xs, ys, label=phase)
-plt.xlabel("MI decay exponent α")
-plt.ylabel("IPR")
-plt.title("Localization vs MI decay exponent α")
-plt.legend()
-plt.savefig("FIG10_alpha_vs_lam1.png", dpi=300)
-plt.close()
+
+    # 10. IPR vs alpha (corrected diagnostic)
+    plt.figure()
+    for phase in PHASES:
+        xs = [r["alpha"] for r in results if r["phase"] == phase]
+        ys = [r["ipr"] for r in results if r["phase"] == phase]
+        plt.scatter(xs, ys, label=phase)
+    plt.xlabel("MI decay exponent alpha")
+    plt.ylabel("IPR")
+    plt.title("Localization vs MI decay exponent alpha")
+    plt.legend()
+    plt.savefig("FIG10_alpha_vs_lam1.png", dpi=300)
+    plt.close()
