@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from itertools import product
@@ -11,6 +12,8 @@ from qutip import *
 Ns = (8, 10, 12, 14)
 PHASES = ("radiation_like", "matter_like", "hyperstiff_like")
 BOOTSTRAP_SAMPLES = 200
+OUTPUT_DIR = "figures"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ============================================================
 # CORE UTILITIES
@@ -167,7 +170,7 @@ if __name__ == "__main__":
     plt.ylabel("⟨I(i,i+r)⟩")
     plt.title("MI decay curves")
     plt.legend()
-    plt.savefig("FIG1_MI_decay.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG1_MI_decay.png"), dpi=300)
     plt.close()
 
     # 2. Eigenmode comparison
@@ -178,7 +181,7 @@ if __name__ == "__main__":
         plt.plot(vecs[:, 1], label=phase)
     plt.title("First nonzero eigenmode comparison (N=14)")
     plt.legend()
-    plt.savefig("FIG2_eigenmodes.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG2_eigenmodes.png"), dpi=300)
     plt.close()
 
     # 3. Spectral density comparison
@@ -188,7 +191,7 @@ if __name__ == "__main__":
         plt.plot(evals, 'o-', label=phase)
     plt.title("Spectral density comparison (N=14)")
     plt.legend()
-    plt.savefig("FIG3_spectrum.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG3_spectrum.png"), dpi=300)
     plt.close()
 
     # 4. Finite-size scaling
@@ -201,7 +204,7 @@ if __name__ == "__main__":
     plt.ylabel("λ₁")
     plt.title("Finite-size scaling of λ₁")
     plt.legend()
-    plt.savefig("FIG4_finite_size.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG4_finite_size.png"), dpi=300)
     plt.close()
 
     # 5. Phase diagram λ1 vs α
@@ -214,7 +217,7 @@ if __name__ == "__main__":
     plt.ylabel("λ₁")
     plt.title("Phase diagram: λ₁ vs α")
     plt.legend()
-    plt.savefig("FIG5_phase_diagram.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG5_phase_diagram.png"), dpi=300)
     plt.close()
 
     # 6. Bootstrap stability
@@ -228,7 +231,7 @@ if __name__ == "__main__":
     plt.ylabel("λ₁ (bootstrap mean ± σ)")
     plt.title("Bootstrap stability of λ₁")
     plt.legend()
-    plt.savefig("FIG6_bootstrap.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG6_bootstrap.png"), dpi=300)
     plt.close()
 
     # 7. Null model comparison
@@ -243,7 +246,7 @@ if __name__ == "__main__":
     plt.ylabel("λ₁")
     plt.title("Null-model comparison")
     plt.legend()
-    plt.savefig("FIG7_null_model.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG7_null_model.png"), dpi=300)
     plt.close()
 
     # 8. IPR vs N
@@ -256,7 +259,7 @@ if __name__ == "__main__":
     plt.ylabel("IPR")
     plt.title("Localization (IPR) vs N")
     plt.legend()
-    plt.savefig("FIG8_IPR_vs_N.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG8_IPR_vs_N.png"), dpi=300)
     plt.close()
 
     # 9. IPR vs λ1
@@ -269,7 +272,7 @@ if __name__ == "__main__":
     plt.ylabel("IPR")
     plt.title("Localization vs mass scale")
     plt.legend()
-    plt.savefig("FIG9_IPR_vs_lam1.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG9_IPR_vs_lam1.png"), dpi=300)
     plt.close()
 
 
@@ -283,5 +286,5 @@ if __name__ == "__main__":
     plt.ylabel("IPR")
     plt.title("Localization vs MI decay exponent alpha")
     plt.legend()
-    plt.savefig("FIG10_alpha_vs_lam1.png", dpi=300)
+    plt.savefig(os.path.join(OUTPUT_DIR, "FIG10_alpha_vs_lam1.png"), dpi=300)
     plt.close()
